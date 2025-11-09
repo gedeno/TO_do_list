@@ -3,5 +3,6 @@ from . import views
 
 urlpatterns = [
     path("",views.taxi, name="taxi" ),
+    path("1", views . car, name = "car " )
 
 ]
