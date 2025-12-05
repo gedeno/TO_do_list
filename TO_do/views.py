@@ -1,8 +1,7 @@
+from django.shortcuts import render
 from  django.http import HttpResponse
+from .models import ToDolist, item
 
-def taxi(request):
-    return HttpResponse("Hello, world this my first function .")
-def car(request):
-    return HttpResponse("Hello, world. this is my scond function.")
-def best(request):
-    return HttpResponse("Hello, world. this is my third  function.")
+def taxi(request,id):
+    ls = ToDolist.objects.get(id=id)
+    return HttpResponse("<h1>%s</h1>" %ls.name)
