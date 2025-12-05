@@ -9,6 +9,6 @@ class ToDolist(models.Model):
 class item(models.Model):
     todolist = models.ForeignKey(ToDolist,on_delete=models.CASCADE)
     text = models.CharField(max_length=500)
-    complex = models.BooleanField()
+    complete = models.BooleanField()
     def __str__(self):
         return self.text
