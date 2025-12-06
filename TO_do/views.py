@@ -4,7 +4,7 @@ from .models import ToDolist, item
 
 def taxi(response,id):
     ls = ToDolist.objects.get(id=id)
-    return render(response, "TO_do/base.html", {})
+    return render(response, "TO_do/list.html", {"ls":ls})
 
 def home(response):
     return render(response, "TO_do/home.html", {})
