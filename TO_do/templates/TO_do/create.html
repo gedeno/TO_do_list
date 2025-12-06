@@ -1,0 +1,9 @@
+{% extends 'TO_do/base.html' %}
+{% block title %} create new list {% endblock %}
+{% block content %}
+create page
+<form action="/create/" method="post">
+    {{form}}
+    <button type="submit",name = "save">create New</button>
+</form>
+{% endblock %}
