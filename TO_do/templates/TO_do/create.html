@@ -3,7 +3,8 @@
 {% block content %}
 create page
 <form action="/create/" method="post">
-    {{form}}
+    {%csrf_token %}
+    {{form.as_ul}}
     <button type="submit",name = "save">create New</button>
 </form>
 {% endblock %}
