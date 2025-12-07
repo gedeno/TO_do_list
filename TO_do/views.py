@@ -9,5 +9,14 @@ def taxi(response,id):
 def home(response):
     return render(response, "TO_do/home.html", {})
 def create(response):
-    form =CreateNewlist()
+    if response.method == "POST":
+        form = CreateNewlist(response.POST)
+
+        if form.is_valid():
+            n = form.cleaned_data["name"]
+            t = ToDolist(name = n)
+            t.save()
+
+    else:
+        form =CreateNewlist()
     return render(response, "TO_do/create.html", {"form":form})

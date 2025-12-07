@@ -2,7 +2,7 @@
 {% block title %} create new list {% endblock %}
 {% block content %}
 create page
-<form action="/create/" method="post">
+<form action="/create/" method="POST">
     {%csrf_token %}
     {{form.as_ul}}
     <button type="submit",name = "save">create New</button>
